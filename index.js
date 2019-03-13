@@ -4,10 +4,15 @@ let packet0 = Buffer.from([5, 1, 0]);
 
 
 let packet1_a = Buffer.from([5, 1, 0, 3]);
-let packet1_b = Buffer.from("www.google.com");
-packet1_b = Buffer.concat([Buffer.from([packet1_b.length]), packet1_b]);
+let packet1_b = Buffer.from("www.baidu.com");
+packet1_b = Buffer.concat([Buffer.from([packet1_b.length]), packet1_b]); // 要加上域名长度
+
 let packet1_c = Buffer.from([0, 80]);
+
+console.log(packet1_c);
 let packet1 = Buffer.concat([packet1_a, packet1_b, packet1_c]);
+
+console.log(packet1_a, packet1_b, packet1_c);
 
 
 
@@ -17,21 +22,21 @@ const client = net.createConnection({ port: 1080, host: "localhost" }, () => {
 })
 
 client.on('data', (res) => {
-    console.log(res);
+    console.log(res.toString());
     if(res.length === 2 && res[1] === 0) {
         client.write(packet1);
     }
     if(res.length === 10 && res[1] === 0) {
         console.log('send http request...')
-        client.write(Buffer.from("hello"));
+        client.write("GET https://www.baidu.com/ HTTP/1.1\n\n");
     }
 })
 
 
 
-client.on('end', () => {
-    console.log('disconnected from server');
-})
+// client.on('end', () => {
+//     console.log('disconnected from server');
+// })
 
 // else if(res.length === 10 && res[1] === 0) {
 //     client.write(Buffer.from(`GET / HTTP/1.1
