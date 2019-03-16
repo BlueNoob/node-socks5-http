@@ -92,7 +92,7 @@ const socks5http = {
                                             })
                                         }
                                     })
-                                    tlsSocket.write("GET " + path + " HTTP/1.1\n" + "Host: " + host + "\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36\nConnection: close\n\n")
+                                    tlsSocket.write("HEAD " + path + " HTTP/1.1\n" + "Host: " + host + "\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36\nConnection: close\n\n")
                                 })
                             }else {
                                 tcpSocket.once('data', (res) => {
@@ -121,7 +121,7 @@ const socks5http = {
                                         })
                                     }
                                 })
-                                tcpSocket.write("GET " + path + " HTTP/1.1\n" + "Host: " + host + "\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36\nConnection: close\n\n")
+                                tcpSocket.write("HEAD " + path + " HTTP/1.1\n" + "Host: " + host + "\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36\nConnection: close\n\n")
                             }
                         }
                     })

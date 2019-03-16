@@ -1,0 +1,23 @@
+{
+  "name": "socks5-http",
+  "version": "0.0.1",
+  "description": "a http cliet that can send http request through socks5 proxy like shadowsocks.",
+  "main": "socks5http.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuxiangluo/node-socks5-http.git"
+  },
+  "keywords": [
+    "socks5",
+    "http"
+  ],
+  "author": "YuxiangLuo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yuxiangluo/node-socks5-http/issues"
+  },
+  "homepage": "https://github.com/yuxiangluo/node-socks5-http#readme"
+}
