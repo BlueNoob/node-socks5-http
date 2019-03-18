@@ -34,4 +34,15 @@ socks5http.get("http://www.google.com", (res) => {
         console.log(s);
     })
 })
+
+// ip and custom port
+socks5http.get("http://47.98.223.187:3000", (res) => {
+    let s = "";
+    res.on('data', (buffer) => {
+        s += buffer.toString();
+    });
+    res.on('end', () => {
+        console.log(s);
+    })
+})
 ```
